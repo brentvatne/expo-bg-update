@@ -16,15 +16,16 @@ export const checkForUpdates = async () => {
         `An update is available. ${update.manifest.id}. Do you want to apply this update?`,
         [
           {
-            onPress: () => {
-              appendTaskLog("Applying update...");
+            onPress: async () => {
+              await appendTaskLog("Applying update...");
               try {
-                Updates.fetchUpdateAsync().then(() => {
-                  appendTaskLog("Reloading app...");
-                  Updates.reloadAsync();
-                });
+                await Updates.fetchUpdateAsync();
+                await appendTaskLog("Reloading app...");
+                await Updates.reloadAsync();
               } catch (e) {
-                appendTaskLog("There was an error updating the app: " + e);
+                await appendTaskLog(
+                  "There was an error updating the app: " + e
+                );
               }
             },
             text: "OK",

@@ -26,6 +26,7 @@ export default function Index() {
       <View
         style={{
           backgroundColor: "red",
+          borderRadius: 4,
           width: 150,
           height: 25,
           marginBottom: 14,
@@ -57,8 +58,9 @@ export default function Index() {
           </View>
         ))}
       </ScrollView>
-      <View style={{ flexDirection: "row", gap: 14 }}>
+      <View style={{ flexDirection: "row", gap: 14, marginBottom: 14 }}>
         <Button title="Clear log" onPress={clearTaskLog} />
+        <Button title="Reload" onPress={() => getTaskLog().then(setLog)} />
       </View>
     </View>
   );
