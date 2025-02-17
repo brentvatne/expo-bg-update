@@ -1,4 +1,5 @@
 import * as Updates from "expo-updates";
+import { Alert } from "react-native";
 
 /**
  * Check for updates in the Expo project.
@@ -8,7 +9,28 @@ export const checkForUpdates = async () => {
     const update = await Updates.checkForUpdateAsync();
 
     if (update.isAvailable) {
-      alert(`An update is available. ${update.manifest.id}`);
+      Alert.alert(
+        "Update available",
+        `An update is available. ${update.manifest.id}. Do you want to apply this update?`,
+        [
+          {
+            onPress: () => {
+              console.log("Applying update...");
+              try {
+                Updates.fetchUpdateAsync().then(() => {
+                  console.log("Reloading.");
+                  Updates.reloadAsync();
+                });
+              } catch (e) {
+                alert("There was an error updating the app: " + e);
+              }
+            },
+            text: "OK",
+            style: "default",
+          },
+          { text: "Cancel", style: "cancel" },
+        ]
+      );
     } else {
       alert("No updates available.");
     }

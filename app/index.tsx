@@ -13,6 +13,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
+      <View style={{ backgroundColor: "lightblue", width: 150, height: 25 }} />
       <Text>Testing Expo Updates using BG Tasks</Text>
       <Button
         title="Check for updates"
