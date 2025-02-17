@@ -1,3 +1,4 @@
+import { appendTaskLog } from "@/src/storage";
 import * as Updates from "expo-updates";
 import { Alert } from "react-native";
 
@@ -6,6 +7,7 @@ import { Alert } from "react-native";
  */
 export const checkForUpdates = async () => {
   try {
+    appendTaskLog("Checking for updates...");
     const update = await Updates.checkForUpdateAsync();
 
     if (update.isAvailable) {
@@ -15,14 +17,14 @@ export const checkForUpdates = async () => {
         [
           {
             onPress: () => {
-              console.log("Applying update...");
+              appendTaskLog("Applying update...");
               try {
                 Updates.fetchUpdateAsync().then(() => {
-                  console.log("Reloading.");
+                  appendTaskLog("Reloading app...");
                   Updates.reloadAsync();
                 });
               } catch (e) {
-                alert("There was an error updating the app: " + e);
+                appendTaskLog("There was an error updating the app: " + e);
               }
             },
             text: "OK",
@@ -33,9 +35,11 @@ export const checkForUpdates = async () => {
       );
     } else {
       alert("No updates available.");
+      appendTaskLog("No updates available.");
     }
   } catch (error) {
     // You can also add an alert() to see the error message in case of an error when fetching updates.
     alert(`Error fetching latest Expo update: ${error}`);
+    appendTaskLog(`Error fetching latest Expo update: ${error}`);
   }
 };
