@@ -1,4 +1,8 @@
-import { Text, View } from "react-native";
+import { initializeUpdateTask } from "@/src/backgroundTask";
+import { checkForUpdates } from "@/src/updates";
+import { Button, Text, View } from "react-native";
+
+// initializeUpdateTask();
 
 export default function Index() {
   return (
@@ -10,6 +14,12 @@ export default function Index() {
       }}
     >
       <Text>Testing Expo Updates using BG Tasks</Text>
+      <Button
+        title="Check for updates"
+        onPress={() => {
+          checkForUpdates();
+        }}
+      />
     </View>
   );
 }

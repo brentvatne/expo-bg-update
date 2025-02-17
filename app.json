@@ -38,6 +38,26 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "7314a405-c143-4d4c-a7e1-b8112c4dc2db"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/7314a405-c143-4d4c-a7e1-b8112c4dc2db",
+      "checkAutomatically": "NEVER",
+      "requestHeaders": {
+        "expo-channel-name": "development",
+        "expo-platform": "ios",
+        "expo-runtimeVersion": "1.0.0"
+      }
     }
   }
 }
