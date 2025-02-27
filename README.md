@@ -22,8 +22,14 @@ Create a new update:
 
 `eas update --channel "development" --message "message here"`
 
-Run background task:
+## iOS - Run background task:
+
+Remember to update `app.json` and the updates.platform field
 
 In XCode debugger, run the following command:
 
 `e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"com.expo.modules.backgroundtask.processing"]`
+
+## Android
+
+Remember to update `app.json` and the updates.platform field
