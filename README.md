@@ -26,6 +26,8 @@ Create a new update:
 
 Remember to update `app.json` and the updates.platform field
 
+run `npx expo prebuild -p ios --clean`
+
 In XCode debugger, run the following command:
 
 `e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"com.expo.modules.backgroundtask.processing"]`
@@ -33,3 +35,11 @@ In XCode debugger, run the following command:
 ## Android
 
 Remember to update `app.json` and the updates.platform field
+
+run `npx expo prebuild -p android --clean`
+
+List jobs:
+`adb shell dumpsys jobscheduler|grep "JOB #|grep ` plus your package name
+
+Execute job:
+`adb shell cmd jobscheduler run -f com.yourpackagename 999` <- job number

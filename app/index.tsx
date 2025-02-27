@@ -25,10 +25,11 @@ export default function Index() {
     >
       <View
         style={{
-          backgroundColor: "red",
+          backgroundColor: "#00ffff",
           borderRadius: 4,
           width: 150,
           height: 25,
+          gap: 10,
           marginBottom: 14,
         }}
       />
