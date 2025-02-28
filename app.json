@@ -10,14 +10,14 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.chrfalch.expo-bg-update"
+      "bundleIdentifier": "com.bront.expo-bg-update"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.chrfalch.expobgupdate"
+      "package": "com.bront.expobgupdate"
     },
     "web": {
       "bundler": "metro",
@@ -45,20 +45,16 @@
         "origin": false
       },
       "eas": {
-        "projectId": "7314a405-c143-4d4c-a7e1-b8112c4dc2db"
+        "projectId": "6e1f1d06-294a-4caf-b163-d74edbadb49e"
       }
     },
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
+    "runtimeVersion": "1.0.0",
     "updates": {
-      "url": "https://u.expo.dev/7314a405-c143-4d4c-a7e1-b8112c4dc2db",
       "checkAutomatically": "NEVER",
       "requestHeaders": {
-        "expo-channel-name": "development",
-        "expo-platform": "ios",
-        "expo-runtimeVersion": "1.0.0"
-      }
+        "expo-channel-name": "development"
+      },
+      "url": "https://u.expo.dev/6e1f1d06-294a-4caf-b163-d74edbadb49e"
     }
   }
 }

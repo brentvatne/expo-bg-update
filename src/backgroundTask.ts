@@ -39,6 +39,7 @@ export const initializeUpdateTask = async () => {
     await BackgroundTask.registerTaskAsync(BACKGROUND_TASK_NAME, {
       minimumInterval: 15,
     });
+    appendTaskLog(`"${BACKGROUND_TASK_NAME}" registered.`);
   } else {
     appendTaskLog(`Task "${BACKGROUND_TASK_NAME}" already registered.`);
   }
